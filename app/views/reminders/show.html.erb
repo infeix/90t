@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reminder.name %>
+</p>
+
+<p>
+  <strong>Refresh rate:</strong>
+  <%= "#{@reminder.refresh_rate} #{@reminder.refresh_rate_unit}" %>
+</p>
+
+<p>
+  <strong>Refreshed at:</strong>
+  <%= @reminder.refreshed_at %>
+</p>
+
+<p>
+  <strong>Required at:</strong>
+  <%= @reminder.required_at %>
+</p>
+
+<%= link_to 'Edit', edit_reminder_path(@reminder) %> |
+<%= link_to 'Back', reminders_path %>

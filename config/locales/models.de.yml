@@ -1,0 +1,57 @@
+de:
+  attributes: &attributes
+    user:
+      accepted_agb: AGB gelesen und akzeptiert
+      accepted_privacy_policy: Datenschutzerklärung gelesen und akzeptiert
+      api_keys: Zugriffsschlüssel
+      company: Unternehmen
+      email: E-Mail
+      fax: Fax
+      first_name: Vorname
+      full_name: Name
+      humanized_gender: Anrede
+      last_name: Nachname
+      name: Name
+      newsletter: Newsletter
+      offer_notification: Nachrichten zu Angeboten
+      outdated_tags_notification: Ablaufende Qualifikationen
+      password: Passwort
+      password_confirmation: Passwort Bestätigung
+      phone: Telefon
+      provider_order_notification: Nachrichten zu Aufträgen
+      receiver_order_notification: Nachrichten zu Bestellungen
+      reference_code: Kennung
+      activities_on_lokpit_notification: Neue Aktivitäten (Suchanfragen, Leistungen)
+      sex: Anredebeiternummer
+
+  errors: &errors
+    messages:
+      blank: Eingabe überprüfen
+      coerce: Eingabe überprüfen
+      email: 'ist keine valide E-Mail Adresse'
+      presence: Eingabe fehlt
+      regexp: Eingabe überprüfen
+    models:
+      capacity:
+        attributes:
+          start_at:
+            must_be_in_future: 'darf nicht in der Vergangenheit liegen'
+            must_be_before_end_at: 'muss vor der Endzeit sein'
+          contact_person:
+            must_be_in_company: 'muss in Ihrem Unternehmen sein'
+
+  models: &models
+    user:
+      one: Benutzer
+      other: Benutzer
+
+  activemodel:
+    models: *models
+    attributes: *attributes
+
+  activerecord:
+    attributes: *attributes
+    errors: *errors
+    models: *models
+  grape:
+    errors: *errors
