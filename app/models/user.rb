@@ -7,4 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 
   has_many :reminders, dependent: :destroy
+
+  validates :name, presence: true
 end

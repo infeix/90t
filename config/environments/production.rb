@@ -61,7 +61,27 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "app90t_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: ENV['NEUNZIGT_HOST'], port: 80 }
+  # Setting host url_options
+  Rails.application.routes.default_url_options[:host] = ENV['NEUNZIGT_HOST']
+
+  # ActionMailer Config
+  # Ignore bad email addresses and do not raise email delivery errors.
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = {
+    host: ENV['NEUNZIGT_HOST'],
+    protocol: 'https'
+  }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    authentication: :plain,
+    address: 'smtp.1blu.de',
+    port: 587,
+    enable_starttls_auto: true,
+    user_name: ENV['NEUNZIGT_MAIL_NAME'],
+    password: ENV['NEUNZIGT_MAIL_PASS']
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
