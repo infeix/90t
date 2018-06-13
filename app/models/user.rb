@@ -8,5 +8,20 @@ class User < ApplicationRecord
 
   has_many :reminders, dependent: :destroy
 
+  before_validation :lock_user
+
   validates :name, presence: true
+
+  def lock_user
+    self.locked_at = Time.zone.now
+  end
+
+  def unlock_user
+    self.locked_at = nil
+  end
+
+  def unlock_user!
+    self.locked_at = nil
+    save!
+  end
 end
