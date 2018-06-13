@@ -76,13 +76,16 @@ Rails.application.configure do
     protocol: 'https'
   }
   config.action_mailer.smtp_settings = {
-    address: ENV['NEUNZIGT_SMTP_HOST'],
-    port: 465,
-    domain: ENV['NEUNZIGT_HOST'],
-    user_name: ENV['NEUNZIGT_MAIL_NAME'],
-    password: ENV['NEUNZIGT_MAIL_PASS'],
-    authentication: :plain,
-    enable_starttls_auto: true
+    address:              ENV['NEUNZIGT_SMTP_HOST'],
+    port:                 '465',
+    domain:               ENV['NEUNZIGT_HOST'],
+    user_name:            ENV['NEUNZIGT_MAIL_NAME'],
+    password:             ENV['NEUNZIGT_MAIL_PASS'],
+    authentication:       :plain,
+    enable_starttls_auto: true,
+    openssl_verify_mode:  'none',
+    ssl:                  true,
+    tls:                  true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
