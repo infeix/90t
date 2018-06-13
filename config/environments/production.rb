@@ -67,20 +67,22 @@ Rails.application.configure do
   # ActionMailer Config
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = { from: "no-reply@#{ENV['NEUNZIGT_HOST']}" }
   config.action_mailer.default_url_options = {
     host: ENV['NEUNZIGT_HOST'],
     protocol: 'https'
   }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    authentication: :plain,
-    address: 'smtp.1blu.de',
-    port: 587,
-    enable_starttls_auto: true,
+    address: ENV['NEUNZIGT_SMTP_HOST'],
+    port: 465,
+    domain: ENV['NEUNZIGT_HOST'],
     user_name: ENV['NEUNZIGT_MAIL_NAME'],
-    password: ENV['NEUNZIGT_MAIL_PASS']
+    password: ENV['NEUNZIGT_MAIL_PASS'],
+    authentication: :plain,
+    enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
