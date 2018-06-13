@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :reminders, dependent: :destroy
 
-  before_validation :lock_user
+  before_validation :lock_user, on: :create
 
   validates :name, presence: true
 
