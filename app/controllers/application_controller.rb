@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  skip_before_action :verify_authenticity_token, except: %i[create update destroy]
+  skip_before_filter :verify_authenticity_token, only: %i[index show]
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
