@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-lock '~> 3.10.1'
+lock '~> 3.11.0'
 
 set :use_sudo, false
 

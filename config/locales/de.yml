@@ -85,13 +85,27 @@ de:
     - :year
   reminders:
     index:
+      titel: Reminder
       new_reminder: "Neuer Reminder"
       refresh: Refresh
       edit: Bearbeiten
       destroy: Löschen
       required_in: Läuft ab in
-      refreshed_at: Aktualisiert am
-      name: Name
       days:
         one: Tag
         other: Tage
+    form:
+      titel: Reminder
+      new_reminder: "Neuer Reminder"
+      refresh_rate: Erneuerungsabstand
+      edit: Bearbeiten
+      destroy: Löschen
+      required_in: Läuft ab in
+      days:
+        one: Tag
+        other: Tage
+      save: Speichern
+  refreshed_at: Aktualisiert am
+  name: Name
+  show: Anzeigen
+  back: Zurück

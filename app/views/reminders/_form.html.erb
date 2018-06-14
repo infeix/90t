@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label t('name') %>
     <%= form.text_field :name, id: :reminder_name %>
   </div>
 
   <div class="field">
-    <%= form.label :refresh_rate %>
+    <%= form.label t('.refresh_rate') %>
     <%= form.number_field :refresh_rate, id: :reminder_refresh_rate %>
     <%= select_tag :reminder_refresh_rate_unit, options_for_select(Reminder::UNITS, Reminder::UNITS.first), name: 'reminder[refresh_rate_unit]' %>
   </div>
 
   <div class="field">
-    <%= form.label :refreshed_at %>
+    <%= form.label t('refreshed_at') %>
     <%= form.date_select :refreshed_at, id: :reminder_refreshed_at %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('.save') %>
   </div>
 <% end %>

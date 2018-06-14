@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class Reminder < ApplicationRecord
-  UNITS = %w[Days Months Years].freeze
+  UNITS = %w[Tage Monat(e) Jahr(e)].freeze
 
   before_validation :set_required_at
 
   belongs_to :user
 
   scope(:only_from_user, ->(user) { where('user_id = :user', user: user.id) })
+  scope(:old_refreshed_frist, -> { order(:refreshed_at) })
 
   def required_in_days
     days = ((required_at - Time.zone.now) / 1.day).ceil

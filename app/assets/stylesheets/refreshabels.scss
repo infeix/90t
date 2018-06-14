@@ -2,68 +2,148 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  margin: 35px;
-}
-
-h1 {
-  margin-bottom: 40px;
-}
-
-table tr:first-child th:first-child {
-    border-top-left-radius: 10px;
-}
-
-table tr:first-child th:last-child {
-    border-top-right-radius: 10px;
-}
-
-table {
-  border-spacing: 0;
-  box-shadow: 10px 20px 30px grey;
-  margin-bottom: 40px;
-}
-
-th {
-  border: solid green 10px;
-  background-color: green;
+.button-error {
+  background: #f2940e;
   color: white;
-}
-
-th {
-  padding-right: 12px;
-  padding-left: 12px;
+  width: 50px;
+  height: 50px;
   padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: left;
 }
 
-td {
-  padding-right: 22px;
-  padding-left: 22px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  text-align: left;
+.button-edit {
+  background: #10490b;
+  color: white;
+  width: 50px;
+  height: 50px;
+  padding-top: 15px;
 }
+
+.button-refresh {
+  background: #a0d4de;
+  border: solid 1px #10490b;
+  width: 50px;
+  height: 50px;
+  padding-top: 15px;
+}
+
 
 tr:nth-child(2n) {
-  background-color: #bdf5bd;
+  background-color: #f9da85;
 }
 
-.field label {
-  display: block;
-  margin-top: 15px;
+@media screen and (min-width: 800px) {
+
+  body {
+    margin: 35px;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+  }
+
+  table tr:first-child th:first-child {
+      border-top-left-radius: 10px;
+  }
+
+  table tr:first-child th:last-child {
+      border-top-right-radius: 10px;
+  }
+
+  table {
+    border-collapse: unset;
+    border-spacing: 0;
+    box-shadow: 10px 20px 30px grey;
+    margin-bottom: 40px;
+  }
+
+  th {
+    border: solid #578925 10px;
+    background-color: #578925;
+    color: white;
+  }
+
+  th {
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+  }
+
+  td {
+    padding-right: 22px;
+    padding-left: 22px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: left;
+  }
+
+  td.actions {
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+  }
+
+  .field label {
+    display: block;
+    margin-top: 15px;
+  }
+
+  .actions {
+    margin-top: 25px;
+  }
+
+  form {
+    margin-bottom: 10px;
+  }
+
+  hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
 }
 
-.actions {
-  margin-top: 25px;
-}
+@media screen and (max-width: 799px) {
 
-form {
-  margin-bottom: 10px;
-}
+  body {
+    margin: 10px;
+  }
 
-hr {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  table tr:first-child th:first-child {
+      border-top-left-radius: 10px;
+  }
+
+  table tr:first-child th:last-child {
+      border-top-right-radius: 10px;
+  }
+
+  table {
+    border-collapse: unset;
+    width: 100%;
+    border-spacing: 0;
+    box-shadow: 10px 20px 30px grey;
+    margin-bottom: 40px;
+  }
+
+  th {
+    border: solid #578925 10px;
+    background-color: #578925;
+    color: white;
+  }
+
+  td {
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+  }
+
+  .actions {
+    margin-top: 25px;
+    padding-left: 0px;
+  }
+
 }
