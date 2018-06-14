@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Reminder < ApplicationRecord
-  UNITS = %w[Days Months Years]
+  UNITS = %w[Days Months Years].freeze
 
   before_validation :set_required_at
 
@@ -10,7 +10,12 @@ class Reminder < ApplicationRecord
   scope(:only_from_user, ->(user) { where('user_id = :user', user: user.id) })
 
   def required_in_days
-    ((required_at - Time.zone.now) / 1.day).ceil
+    days = ((required_at - Time.zone.now) / 1.day).ceil
+    if days.negative?
+      0
+    else
+      days
+    end
   end
 
   def set_required_at
