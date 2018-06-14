@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class RemindersController < ApplicationController
+  protect_from_forgery with: :exception
+
   before_action :authenticate_user!
   before_action :set_reminder, only: %i[show edit update destroy refresh]
 
