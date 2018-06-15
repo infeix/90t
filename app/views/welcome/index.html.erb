@@ -1,0 +1,35 @@
+<% resource = @resource %>
+<% resource_name = @resource_name %>
+<% controller_name = @controller_name %>
+
+<div class="login-wrapper">
+  <h1><%= t('.sign_in') %></h1>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email, class: 'label-field' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-field user--email' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, class: 'label-field' %>
+      <%= f.password_field :password, autocomplete: "off", class: 'text-field user--password' %>
+    </div>
+
+    <div class="field">
+      <div class="label-field">
+        <%= f.check_box :remember_me, class: 'box-field' %>
+        <%= f.label :remember_me, class: 'label-field' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.submit t('.sign_in'), class: 'label-field button-edit pure-button user--login-button' %>
+    </div>
+  <% end %>
+
+  <hr class="spacer">
+  <div class="field">
+    <%= render partial: "devise/shared/links", locals: { resource_name: resource_name, resource: resource, controller_name: controller_name  } %>
+  </div>
+</div>
