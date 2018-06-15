@@ -20,9 +20,9 @@ class Reminder < ApplicationRecord
   end
 
   def set_required_at
-    unit_time = if refresh_rate_unit == 'Months'
+    unit_time = if refresh_rate_unit == 'Monat(e)'
       1.month
-    elsif refresh_rate_unit == 'Years'
+    elsif refresh_rate_unit == 'Jahr(e)'
       1.year
     else
       1.day
