@@ -335,6 +335,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   jbuilder (~> 2.5)
+  jquery-rails
   letter_opener
   listen
   pg
