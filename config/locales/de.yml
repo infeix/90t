@@ -53,6 +53,10 @@ de:
     - :month
     - :year
   reminders:
+    edit:
+      titel: Reminder bearbeiten
+    new:
+      titel: Neuer Reminder
     index:
       titel: Reminder
       new_reminder: "Neuer Reminder"
@@ -78,3 +82,7 @@ de:
   name: Name
   show: Anzeigen
   back: Zurück
+  welcome:
+    index:
+      sign_in:
+        Anmelden

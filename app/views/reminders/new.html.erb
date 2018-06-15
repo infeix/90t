@@ -1,5 +1,10 @@
-<h1>New Reminder</h1>
 
-<%= render 'form', reminder: @reminder %>
+<div class="login-wrapper">
+  <h1><%= t('.titel') %></h1>
 
-<%= link_to t('back'), reminders_path %>
+  <%= render 'form', reminder: @reminder %>
+
+  <hr class="spacer">
+
+  <%= link_to t('back'), reminders_path %>
+</div>

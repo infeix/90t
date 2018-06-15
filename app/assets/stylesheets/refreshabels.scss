@@ -2,113 +2,106 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.button-error {
-  background: #f2940e;
-  color: white;
+.icon-button {
   width: 50px;
   height: 50px;
   padding-top: 15px;
+}
+
+.button-error {
+  background: #f2940e;
+  color: white;
 }
 
 .button-edit {
   background: #10490b;
   color: white;
-  width: 50px;
-  height: 50px;
-  padding-top: 15px;
 }
 
 .button-refresh {
   background: #a0d4de;
   border: solid 1px #10490b;
-  width: 50px;
-  height: 50px;
-  padding-top: 15px;
 }
 
+.refreshabels-wrapper {
+  margin-bottom: 40px;
+  padding: 20px;
+  margin:0.3cm;
+}
 
 tr:nth-child(2n) {
-  background-color: #f9da85;
+  background-color: #fae29e;
 }
 
-@media screen and (min-width: 800px) {
 
-  body {
-    margin: 35px;
-  }
+h1 {
+  margin: 0px;
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table {
+  border-collapse: unset;
+  border-spacing: 0;
+  box-shadow: 10px 20px 30px grey;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+th {
+  border: solid #578925 10px;
+  background-color: #578925;
+  color: white;
+}
+
+th {
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+td {
+  padding-right: 22px;
+  padding-left: 22px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: left;
+}
+
+td.actions {
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+.actions {
+  margin-top: 25px;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+hr {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+
 
   h1 {
-    margin-bottom: 40px;
-  }
-
-  table tr:first-child th:first-child {
-      border-top-left-radius: 10px;
-  }
-
-  table tr:first-child th:last-child {
-      border-top-right-radius: 10px;
-  }
-
-  table {
-    border-collapse: unset;
-    border-spacing: 0;
-    box-shadow: 10px 20px 30px grey;
-    margin-bottom: 40px;
-  }
-
-  th {
-    border: solid #578925 10px;
-    background-color: #578925;
-    color: white;
-  }
-
-  th {
-    padding-right: 12px;
-    padding-left: 12px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: left;
-  }
-
-  td {
-    padding-right: 22px;
-    padding-left: 22px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    text-align: left;
-  }
-
-  td.actions {
-    padding-right: 12px;
-    padding-left: 12px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: left;
-  }
-
-  .field label {
-    display: block;
-    margin-top: 15px;
-  }
-
-  .actions {
-    margin-top: 25px;
-  }
-
-  form {
-    margin-bottom: 10px;
-  }
-
-  hr {
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-}
-
-@media screen and (max-width: 799px) {
-
-  body {
-    margin: 10px;
+    padding: 0.5cm;
   }
 
   table tr:first-child th:first-child {
@@ -145,5 +138,4 @@ tr:nth-child(2n) {
     margin-top: 25px;
     padding-left: 0px;
   }
-
 }

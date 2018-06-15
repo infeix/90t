@@ -1,47 +1,50 @@
-<h1><%= t('.titel') %></h1>
+<div class="refreshabels-wrapper">
 
-<table>
-  <thead>
-    <tr>
-      <th><%= t('name') %></th>
-      <th><%= t('refreshed_at') %></th>
-      <th><%= t('.required_in') %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1><%= t('.titel') %></h1>
 
-  <tbody>
-    <% @reminders.old_refreshed_frist.each do |reminder| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= reminder.name %></td>
-        <td><%= reminder.refreshed_at.strftime('%d.%m.%Y') %></td>
-        <% if reminder.required_in_days > 0 %>
-          <td><%= "#{reminder.required_in_days} #{t('.days', count: reminder.required_in_days)}" %></td>
-        <% else %>
-          <td><%= "abgelaufen" %></td>
-        <% end %>
-        <td class="actions">
-          <%= link_to refresh_reminder_path(reminder), method: :post, class: 'button-refresh pure-button' do %>
-            <i class="fa fa-sync"></i>
-          <% end %>
-          <%= link_to edit_reminder_path(reminder), class: 'button-edit pure-button' do %>
-            <i class="fa fa-edit"></i>
-          <% end %>
-          <%= link_to reminder, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-error pure-button'  do %>
-            <i class="fa fa-trash"></i>
-          <% end %>
-        </td>
+        <th><%= t('name') %></th>
+        <th><%= t('refreshed_at') %></th>
+        <th><%= t('.required_in') %></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @reminders.old_refreshed_frist.each do |reminder| %>
+        <tr>
+          <td><%= reminder.name %></td>
+          <td><%= reminder.refreshed_at.strftime('%d.%m.%Y') %></td>
+          <% if reminder.required_in_days > 0 %>
+            <td><%= "#{reminder.required_in_days} #{t('.days', count: reminder.required_in_days)}" %></td>
+          <% else %>
+            <td><%= "abgelaufen" %></td>
+          <% end %>
+          <td class="actions">
+            <%= link_to refresh_reminder_path(reminder), method: :post, class: 'icon-button button-refresh pure-button' do %>
+              <i class="fa fa-sync"></i>
+            <% end %>
+            <%= link_to edit_reminder_path(reminder), class: 'icon-button button-edit pure-button' do %>
+              <i class="fa fa-edit"></i>
+            <% end %>
+            <%= link_to reminder, method: :delete, data: { confirm: 'Are you sure?' }, class: 'icon-button button-error pure-button'  do %>
+              <i class="fa fa-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to t('.new_reminder'), new_reminder_path %>
+  <br>
 
-<hr>
+  <%= link_to t('.new_reminder'), new_reminder_path %>
 
-<%= link_to destroy_user_session_path, class: 'user--logout--button', 'data-method' => 'delete', role: 'button' do %>
-  LogOut
-<% end %>
+  <hr class="spacer">
+
+  <%= link_to destroy_user_session_path, class: 'user--logout--button', 'data-method' => 'delete', role: 'button' do %>
+    LogOut
+  <% end %>
+</div>

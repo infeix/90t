@@ -40,7 +40,7 @@ class RemindersController < ApplicationController
     @reminder.user = current_user
 
     if @reminder.save
-      redirect_to @reminder, notice: 'Reminder was successfully created.'
+      redirect_to reminders_url, notice: 'Reminder was successfully created.'
     else
       render :new
     end
@@ -49,7 +49,7 @@ class RemindersController < ApplicationController
   # PATCH/PUT /reminders/1
   def update
     if @reminder.update(reminder_params)
-      redirect_to @reminder, notice: 'Reminder was successfully updated.'
+      redirect_to reminders_url, notice: 'Reminder was successfully updated.'
     else
       render :edit
     end
