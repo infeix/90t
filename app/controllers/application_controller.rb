@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true
+  protect_from_forgery
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -23,6 +23,8 @@ class ApplicationController < ActionController::Base
   private
 
   def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first || I18n.default_locale
+    parsed_local = request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first
+    return parsed_local if I18n.available_locales.include?(parsed_local)
+    I18n.default_locale
   end
 end
